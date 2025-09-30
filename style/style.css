@@ -1,0 +1,34 @@
+/* 
+font-family: 'IBM Plex Mono', monospace;
+
+font-family: 'Righteous', cursive;
+
+font-family: 'Roboto Mono', monospace;
+
+font-family: 'Teko', sans-serif; 
+
+font-family: 'Rubik Iso', cursive;
+
+font-family: 'Tilt Warp', cursive;
+
+font-family: 'Titillium Web', sans-serif;
+*/
+
+:root {
+    --dark-bg: #242424;
+    --darker-bg:#000;
+    --gray-bg: #575757;
+    --light-text: #e2e2e2;
+    --dark-text: #242424;
+    --highlight: #ff5100;
+    --highlight2: #00AEFF;
+    --highlight3: #FF0032;
+    --highlight4: #00FFFB;
+    --highlight5: #a70021;
+}
+
+body {
+    background-color: var(--dark-bg);
+    color: var(--light-text);
+    font-size: calc((.9 - 1) * 1.2vw + 1rem);
+}
