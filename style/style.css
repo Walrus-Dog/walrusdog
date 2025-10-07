@@ -9,16 +9,61 @@ font-family: 'Helvetic-Neue-Condensed-Bold', sans-serif;
 }
 
 :root {
+    /* main colors */
+
     --dark-bg: #242424;
     --darker-bg:#000;
     --gray-bg: #575757;
     --light-text: #e2e2e2;
     --dark-text: #242424;
-    --highlight: #ff5100;
-    --highlight2: #00AEFF;
-    --highlight3: #FF0032;
-    --highlight4: #00FFFB;
-    --highlight5: #a70021;
+
+    /* highlight colors */
+
+    /* oranges */
+    --orange1: #ff5100;
+    --orange2: #fe8101;
+    --orange3: #fc9515;
+    --orange4: #d36929;
+    --orange5: #f42900;
+    --orange6: #e0c7ba;
+
+    /* pinks */
+    --pink1: #ff799e;
+
+    /* greens */
+    --green1: #5e9552;
+
+    /* yellows */
+    --yellow1: #e5e68e;
+    --yellow2: #c09e45;
+
+    /* reds */
+    --red1: #FF0032;
+    --red2: #a70021;
+
+    /* grays */
+    --gray1: #d7d7da;
+    --gray2: #7d7c8a;
+    --gray3: #8b8084;
+
+    /* blues */
+    --blue1: #00AEFF;
+    --blue2: #00FFFB;
+    --blue3: #11bbfa;
+    --blue4: #a2e9fa;
+    --blue5: #4360c9;
+    --blue6: #759ae3;
+    --blue7: #698da4;
+    --blue8: #639ff7;
+    --blue9: #0099ff;
+    --blue10: #0d5f5f;
+    --blue11: #52648a;
+    --blue12: #1e303a;
+    --blue13: #131e40;
+    --blue14: #bec6e9;
+    --blue15: #375764;
+    --blue16: #192b35;
+    --blue17: #94b0b4;
 }
 
 body {
