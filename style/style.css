@@ -1,18 +1,12 @@
 /* 
 font-family: 'IBM Plex Mono', monospace;
-
-font-family: 'Righteous', cursive;
-
-font-family: 'Roboto Mono', monospace;
-
-font-family: 'Teko', sans-serif; 
-
-font-family: 'Rubik Iso', cursive;
-
-font-family: 'Tilt Warp', cursive;
-
-font-family: 'Titillium Web', sans-serif;
+font-family: 'Helvetic-Neue-Condensed-Bold', sans-serif;
 */
+
+@font-face {
+    font-family: 'Helvetic-Neue-Condensed-Bold';
+    src: url(/fonts/Helvetica\ Neue\ Condensed\ Bold.ttf);
+}
 
 :root {
     --dark-bg: #242424;
@@ -31,4 +25,5 @@ body {
     background-color: var(--dark-bg);
     color: var(--light-text);
     font-size: calc((.9 - 1) * 1.2vw + 1rem);
+    font-family: 'IBM Plex Mono', monospace, sans-serif;
 }
