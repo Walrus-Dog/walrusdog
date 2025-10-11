@@ -74,7 +74,7 @@ body {
 }
 
 h1::selection, p::selection, a::selection {
-    color: var(--red1);
+    color: var(--orange1);
     background-color: none;
 }
 
@@ -91,3 +91,16 @@ a:hover {
     display: flex;
     margin-top: 10px;
 }
+
+/* about page */
+.about-nav {
+    display: flex;
+}
+
+.about-nav-link {
+    padding-right: 10px;
+}
+
+/* .about-text {
+    padding-right: 50px;
+} */
