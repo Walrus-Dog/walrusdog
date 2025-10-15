@@ -93,14 +93,35 @@ a:hover {
 }
 
 /* about page */
+.about-wrapper {
+    font-family: 'Helvetic-Neue-Condensed-Bold';
+}
+
+.about-header-wrapper {
+    border: 1px red solid;
+}
+
+.about-main-header {
+    font-size: calc((3 - 1) * 1.2vw + 1rem);
+}
+
 .about-nav {
     display: flex;
+    font-size: calc((1.1 - 1) * 1.2vw + 1rem);
+    padding: 0;
+    margin: 0;
 }
 
 .about-nav-link {
-    padding-right: 10px;
+    margin-right: 10px;
 }
 
-/* .about-text {
-    padding-right: 50px;
-} */
+.about-text, .about-socials {
+    font-size: calc((1.1 - 1) * 1.2vw + 1rem);
+} 
+
+.about-main {
+    height: 100vh;
+    border-left: 1px solid var(--yellow1);
+    padding-left: 15rem;
+}
