@@ -98,6 +98,12 @@ a:hover {
     padding-top: 4rem; /* space for fixed header */
 }
 
+/* Very big no good thing that makes the selection yellow */
+.about-main-header::selection, .about-nav-link::selection, .about-header::selection, .about-text::selection, .about-socials::selection {
+    color: var(--yellow1);
+    background-color: none;
+}
+
 .about-header-wrapper {
     position: fixed;
     top: 0;
@@ -127,6 +133,18 @@ a:hover {
     margin: 0;
 }
 
+.about-nav-link:hover, .about-main-header:hover {
+    color: var(--yellow1);
+}
+
+.about-highlight {
+    color: var(--yellow1);
+}
+
+.about-highlight:hover {
+    color: var(--light-text);
+}
+
 .about-nav-link {
     margin-right: 10px;
 }
@@ -134,9 +152,13 @@ a:hover {
 .about-spacer {
     height: 24rem;
 }
+.about-header {
+    padding-right: 3rem;
+}
 
 .about-text, .about-socials {
     font-size: calc((1.1 - 1) * 1.2vw + 1rem);
+    padding-top: 0.5rem;
 } 
 
 .about-main {
