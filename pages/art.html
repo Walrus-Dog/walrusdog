@@ -11,20 +11,107 @@
 </head>
 <body>
     <header>
-        <h1>wuh</h1>
-        <ul class="about-nav">
-            <a href="../index.html" class="about-nav-link">home</a>
-            <a href="about.html" class="about-nav-link">about</a>
-            <a href="art.html" class="about-nav-link">art</a>
-            <a href="gamedesign.html" class="about-nav-link">design</a>
-            <a href="projects.html" class="about-nav-link">projects</a>
+        <ul class="art-nav container">
+            <h1>walrusdog</h1>
+            <a href="../index.html" class="art-nav-link">home</a>
+            <a href="about.html" class="art-nav-link">about</a>
+            <a href="art.html" class="art-nav-link">art</a>
+            <a href="projects.html" class="art-nav-link">projects</a>
         </ul>
     </header>
     <main>
-        <p>art will go here be patient</p>
-        
+        <section class="lightbox-wrapper container">
+            <h1 class="lightbox-header">3d art</h1>
+            <p class="lightbox-text">this is a selection of 3d art I have made, some for projects, others for fun.</p>
+            <p class="lightbox-text">everything is made and textured by me, unless specified</p>
+            <div class="lightbox-grid">
+                <div class="lightbox-item"><img data-index="0" src="../media/art/poryguy.gif" alt="low poly porygon animation" loading="lazy"></div>
+                <div class="lightbox-item"><img data-index="1" src="../media/art/office.png" alt="3d level created for numinous" loading="lazy"></div>
+                <div class="lightbox-item"><img data-index="2" src="../media/art/nonofit.png" alt="model made for final fantasy 14 (personal use)" loading="lazy"></div>
+                <div class="lightbox-item"><img data-index="3" src="../media/art/puter.png" alt="based on the old mac computers, made for numinous" loading="lazy"></div>
+                <div class="lightbox-item"><img data-index="4" src="../media/art/island.png" alt="secret island made for numinous" loading="lazy"></div>
+                <div class="lightbox-item"><img data-index="5" src="../media/art/stage.png" alt="noh theatre stage made for upcoming project" loading="lazy"></div>
+                <div class="lightbox-item"><img data-index="6" src="../media/art/cabinet.png" alt="filing cabinet made for numinous" loading="lazy"></div>
+                <div class="lightbox-item"><img data-index="7" src="../media/art/shrine.png" alt="shinto shrine made for upcoming project" loading="lazy"></div>
+                <div class="lightbox-item"><img data-index="8" src="../media/art//train.png" alt="train car with interior, made for numinous" loading="lazy"></div>
+                <div class="lightbox-item"><img data-index="9" src="../media/art/desk.png" alt="office desk made for numinous" loading="lazy"></div>
+                <div class="lightbox-item"><img data-index="10" src="../media/art/key.png" alt="stairwell key made for numinous" loading="lazy"></div>
+                <div class="lightbox-item"><img data-index="11" src="../media/art/vending.png" alt="original model not made by me. vending machine textured by me for numinous" loading="lazy"></div>
+                <div class="lightbox-item"><img data-index="12" src="../media/art/station.png" alt="original level not made by me. however i had to highly edit it and texture it. made for numinous" loading="lazy"></div>
+            </div>
+        </section>
+        <div id="lightboxOverlay" class="lightbox-overlay" aria-hidden="true">
+            <button class="lightbox-close" aria-label="Close (Esc)">&times;</button>
+            <button class="lightbox-prev" aria-label="Previous (Left)">&#8249;</button>
+            <div class="lightbox-content">
+                <img id="lightboxImage" src="" alt="" />
+                <p id="lightboxCaption" class="lightbox-caption"></p>
+            </div>
+            <button class="lightbox-next" aria-label="Next (Right)">&#8250;</button>
+        </div>
     </main>
     <footer></footer>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+    <script>
+    (function () {
+        const overlay = document.getElementById('lightboxOverlay');
+        const lightboxImage = document.getElementById('lightboxImage');
+        const caption = document.getElementById('lightboxCaption');
+        const images = Array.from(document.querySelectorAll('.lightbox-grid img'));
+        let currentIndex = 0;
+
+        function openLightbox(index) {
+            const img = images[index];
+            if (!img) return;
+            currentIndex = index;
+            lightboxImage.src = img.src;
+            lightboxImage.alt = img.alt || '';
+            caption.textContent = img.alt || '';
+            overlay.classList.add('open');
+            overlay.setAttribute('aria-hidden', 'false');
+            document.body.style.overflow = 'hidden';
+            overlay.querySelector('.lightbox-close').focus();
+        }
+
+        function closeLightbox() {
+            overlay.classList.remove('open');
+            overlay.setAttribute('aria-hidden', 'true');
+            document.body.style.overflow = '';
+            lightboxImage.src = '';
+        }
+
+        function showNext() {
+            openLightbox((currentIndex + 1) % images.length);
+        }
+
+        function showPrev() {
+            openLightbox((currentIndex - 1 + images.length) % images.length);
+        }
+
+        images.forEach((img, i) => {
+            img.style.cursor = 'zoom-in';
+            img.addEventListener('click', () => openLightbox(i));
+            img.addEventListener('keydown', (e) => {
+                if (e.key === 'Enter' || e.key === ' ') openLightbox(i);
+            });
+        });
+
+        overlay.querySelector('.lightbox-close').addEventListener('click', closeLightbox);
+        overlay.querySelector('.lightbox-next').addEventListener('click', showNext);
+        overlay.querySelector('.lightbox-prev').addEventListener('click', showPrev);
+
+        overlay.addEventListener('click', (e) => {
+            if (e.target === overlay) closeLightbox();
+        });
+
+        document.addEventListener('keydown', (e) => {
+            if (overlay.classList.contains('open')) {
+                if (e.key === 'Escape') closeLightbox();
+                if (e.key === 'ArrowRight') showNext();
+                if (e.key === 'ArrowLeft') showPrev();
+            }
+        });
+    })();
+    </script>
 </body>
 </html>
