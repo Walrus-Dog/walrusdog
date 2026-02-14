@@ -92,7 +92,18 @@ a:hover {
     margin-top: 10px;
 }
 
+.header-logo {
+    width: 50px;
+    margin-right: 20px;
+}
+
 /* home page */
+.home-nav {
+    display: flex;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
 .home-main {
     border-top: 1px solid var(--orange1);
     padding-top: 10rem;
