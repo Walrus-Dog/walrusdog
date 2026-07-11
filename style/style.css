@@ -11,16 +11,16 @@ font-family: 'Helvetic-Neue-Condensed-Bold', sans-serif;
 :root {
     /* main colors */
 
-    --dark-bg: #242424;
+    --dark-bg: #28262E; 
     --darker-bg:#000;
     --gray-bg: #575757;
-    --light-text: #e2e2e2;
+    --light-text: #F2EBD9;
     --dark-text: #242424;
 
     /* highlight colors */
 
     /* oranges */
-    --orange1: #ff5100;
+    --orange1: #FF3D00;
     --orange2: #fe8101;
     --orange3: #fc9515;
     --orange4: #d36929;
@@ -114,6 +114,15 @@ a:hover {
     padding-right: 100px;
     font-size: calc((2 - 1) * 1.2vw + 1rem);
 }
+
+/* .main-footer {
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 1rem;
+    background-color: var(--orange1);
+}  */
 
 /* about page */
 .about-wrapper {
