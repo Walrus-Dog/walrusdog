@@ -69,7 +69,7 @@ font-family: 'Helvetic-Neue-Condensed-Bold', sans-serif;
 body {
     background-color: var(--dark-bg);
     color: var(--light-text);
-    font-size: calc((.9 - 1) * 1.2vw + 1rem);
+    font-size: calc((1 - 1) * 1.2vw + 1rem);
     font-family: 'IBM Plex Mono', monospace, sans-serif;
 }
 
@@ -115,14 +115,28 @@ a:hover {
     font-size: calc((2 - 1) * 1.2vw + 1rem);
 }
 
-/* .main-footer {
-    position: fixed;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    height: 1rem;
-    background-color: var(--orange1);
-}  */
+.home-main {
+    position: relative;
+    z-index: 1;
+}
+
+@media (max-width: 768px) {
+    .home-nav {
+        flex-direction: column;
+        align-items: center;
+        gap: 0.45rem;
+    }
+
+    .home-nav-link {
+        padding-right: 0;
+        width: 100%;
+        text-align: center;
+    }
+
+    .random-bg-img {
+        display: none;
+    }
+}
 
 /* about page */
 .about-wrapper {
@@ -132,9 +146,13 @@ a:hover {
 
 .about-header {
     font-size: 2rem;
-    margin-bottom: 0.25rem;
+    margin-bottom: 1.5rem;
     border-bottom: solid 1px var(--orange1);
     width: fit-content;
+}
+
+.about-text, .about-socials, .about-email {
+    margin-left: 1rem;
 }
 
 /* art page */
@@ -151,14 +169,15 @@ a:hover {
 
 .lightbox-header {
     font-size: 2rem;
-    margin-bottom: 0.25rem;
+    margin-bottom: 1rem;
     border-bottom: solid 1px var(--orange1);
     width: fit-content;
 }
 
 .lightbox-text {
-    color: var(--gray1);
+    color: var(--light-text);
     margin-bottom: 1rem;
+    margin-left: 1rem;
 }
 
 .lightbox-grid {
@@ -211,7 +230,7 @@ a:hover {
 }
 
 .lightbox-caption {
-    color: var(--gray1);
+    color: var(--light-text);
     font-size: 0.95rem;
 }
 
@@ -247,13 +266,14 @@ a:hover {
 
 .proj-header {
     font-size: 2rem;
-    margin-bottom: 0.25rem;
+    margin-bottom: 1rem;
     border-bottom: solid 1px var(--orange1);
     width: fit-content;
 }
 .proj-text {
-    color: var(--gray1);
+    color: var(--light-text);
     margin-bottom: 1rem;
+    margin-left: 1rem;
 }
 
 .projects-item {
@@ -275,11 +295,11 @@ a:hover {
 }
 
 .proj-link {
-    color: var(--orange1);
+    color: var(--light-text);
 }
 
 .proj-link:hover {
-    color: var(--light-text);
+    color: var(--orange1);
 }
 
 .wd-img {
@@ -291,4 +311,15 @@ a:hover {
     margin-top: 0.5rem;
     border-bottom: solid 1px var(--orange1);
     width: fit-content;
+}
+
+.random-bg-img {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    width: clamp(9rem, 26vw, 22rem);
+    max-width: calc(100vw - 2rem);
+    max-height: 45vh;
+    height: auto;
+    z-index: 0;
 }
