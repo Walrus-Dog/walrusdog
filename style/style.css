@@ -71,6 +71,7 @@ body {
     color: var(--light-text);
     font-size: calc((1 - 1) * 1.2vw + 1rem);
     font-family: 'IBM Plex Mono', monospace, sans-serif;
+    caret-color: var(--light-text);
 }
 
 h1::selection, p::selection, a::selection {
@@ -322,4 +323,8 @@ a:hover {
     max-height: 45vh;
     height: auto;
     z-index: 0;
+}
+
+.random-bg-img:hover {
+    filter: invert(1);
 }
